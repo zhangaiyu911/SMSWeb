@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/report4.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/barcode.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/datetimeformat.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/demo_helper.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/itext2_rq.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/iTextAsian.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/jai_codec.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/jai_core.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/jdom.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/log4j_128.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/parser.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/poi2.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/report4.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files (x86)/quieeReport/webapps/quiee/WEB-INF/lib/webutil.jar"/>
+	<classpathentry kind="lib" path="E:/nktyhr/SMSWeb/WebContent/lib/ueditor/1.4.3/jsp/lib/ueditor-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/plugins/javax.servlet.jsp_2.2.0.v201112011158.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/plugins/javax.servlet_3.0.0.v201112011016.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
