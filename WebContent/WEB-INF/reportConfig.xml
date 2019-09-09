@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<reportConfig>
+    <config>
+      <name>logConfig</name>
+      <value>/WEB-INF/runqianReportLog.properties</value>
+    </config>
+    <config>
+      <name>license</name>
+      <value>/WEB-INF/quieeWindowServer.lic</value>
+    </config>
+    <config>
+      <name>reportFileHome</name>
+      <value>/reportFiles</value>
+    </config>
+   
+<!--     <config> -->
+<!--       <name>JNDIPrefix</name> -->
+<!--       <value>java:comp/env</value> -->
+<!--     </config> -->
+	<!--数据源 -->
+ 	<jdbc-ds-configs>
+		<jdbc-ds-config>
+			<name>SMDB</name>
+			<db-type>SQLSVR</db-type>
+			<connection-url>jdbc:sqlserver://10.1.70.16:1433;databasename=SupplierManageDB</connection-url>
+			<driver-class>com.microsoft.sqlserver.jdbc.SQLServerDriver
+			</driver-class>
+			<user-name>sa</user-name>
+			<password>nkty</password>
+			<db-charset>gbk</db-charset>
+			<client-charset>gbk</client-charset>
+			<extend-properties></extend-properties>
+		</jdbc-ds-config>
+	</jdbc-ds-configs>
+    
+<!--     <config> -->
+<!--       <name>dataSource</name> -->
+<!--       <value>NKTYHR,sqlsvr,1,GBK,GBK,0</value> -->
+<!--     </config> -->
+	<config>
+      <name>jspCharset</name>
+      <value>GBK</value>
+    </config>
+	<config>
+      <name>alwaysReloadDefine</name>
+      <value>yes</value>
+    </config>
+    <config>
+      <name>cachedParamsTimeout</name>
+      <value>120</value>
+    </config>
+    <config>
+      <name>cachedReportDir</name>
+      <value>E:\work\report\cached</value>
+    </config>
+    <config>
+      <name>cachedIdPrefix</name>
+      <value>A</value>
+    </config>
+    <config>
+      <name>cachedReportTimeout</name>
+      <value>120</value>
+    </config>
+    <config>
+      <name>maxCellNum</name>
+      <value>100000</value>
+    </config>
+    <config>
+      <name>maxConcurrentForReport</name>
+      <value></value>
+    </config>
+    <config>
+      <name>maxWaitForReport</name>
+      <value>10</value>
+    </config>
+    <config>
+      <name>maxWaitTimeForReport</name>
+      <value>30</value>
+    </config>
+    <config>
+      <name>appUrlPrefix</name>
+      <value></value>
+    </config>
+    <config>
+      <name>errorPage</name>
+      <value>/myError.jsp</value>
+    </config>
+</reportConfig>

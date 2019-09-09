@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* CSS Document */
+/*整体*/
+*{font-size:9pt;border:0;margin:0;padding:0; }
+body{font-family:'宋体'; margin:0 auto; background:#FFF;}
+ul{display:block;margin:0;padding:0;list-style:none;}
+li{display:block;margin:0;padding:0;list-style: none;}
+img{border:0;}
+dl,dt,dd{margin:0;padding:0;display:block;}
+a,a:focus{text-decoration:none;color:#000;outline:none;blr:expression(this.onFocus=this.blur());}
+/*a:hover{color:#000;text-decoration:none;}*/
+table{border-collapse:collapse;border-spacing: 0;}
+cite{font-style:normal;}
+h2{font-weight:normal;}
+html, body { font-size:14px;font-family: "宋体";}
+/*新闻列表页*/
+.logo{ width:875px; height:175px;margin:0px auto;}
+.center{width:875px; overflow:hidden; margin:10px auto 0px auto; }
+.login{ width:180px; height:180px; overflow:hidden;border:1px solid #cbcbcb; float:left;}
+.news_btn{ width:100px; line-height:30px; height:30px; background:#ee7805; border:1px solid #C60; color:#FFF; margin:50px auto 0px auto; text-align:center;}
+.news{ width:675px; overflow:hidden; margin-right:15px;border:1px solid #cbcbcb; float:left; }
+.banner{width:675px; height:300px; overflow:hidden; margin-right:15px;border:1px solid #cbcbcb; float:left; position:relative;}
+.banner img{width:675px; height:300px;}
+.rslides{width:100%;position:relative;list-style:none;padding:0}
+.rslides_tabs{ position:absolute; left:280px; top:230px;clear:both;text-align:center; z-index:99999;}
+.rslides_tabs li{display:inline;float:left;*float:left;margin-right:5px}
+.rslides_tabs a{ width:12px; height:12px; background:#fff;text-indent:-5em; overflow:hidden; display:block; float:left; margin:50px 6px 0px 6px;border-radius:50%;}
+.rslides_tabs .rslides_here a{ background:#ff9900;width:15px; height:15px; margin:48px 6px 0px 6px;}
+.news_label{height:40px; line-height:40px; text-indent:30px; font-size:18px; font-weight:bold; background:#f8f8f8; border-bottom:1px solid #cbcbcb;}
+.login li{ height:30px; line-height:30px; padding:5px; clear:both;}
+
+.title{ width:90%; margin:20px auto; height:30px; line-height:30px; text-align:center; font-size:18px; font-weight:bold; border-bottom:#cbcbcb 1px dotted; }
+.mes{ width:98%; margin:20px auto;line-height:25px;}
+.news ul{ padding:20px 0px;}
+.news li{ width:98%;border-bottom:#cbcbcb 1px dotted; margin:5px auto; line-height:20px; height:25px;}
+.news a{ float:left; cursor:pointer;}
+.news a:hover{ color:#F90;}
+.news span{ color:#999; float:right;}
+.bottom{width:875px; height:30px; line-height:30px;margin:20px auto 0px auto; background:#999; text-align:center; color:#FFF;}
+.details{width:875px; overflow:hidden; margin:10px auto;}
+.details_mes{ border-left:1px solid #cbcbcb;border-left:1px solid #cbcbcb;border-right:1px solid #cbcbcb;border-bottom:1px solid #cbcbcb;}
+.details_mes ul{ width:360px; height:30px; height:100px; line-height:30px; margin:0px auto;}
+.details_mes li{ width:180px; float:left;}
+.list{width:875px; overflow:hidden; margin:10px auto;}
+.list_label{ height:40px; line-height:40px; text-indent:30px; font-size:18px; font-weight:bold; background:#f8f8f8; border:1px solid #cbcbcb;}
+.search{ height:60px; line-height:60px;  font-size:18px; font-weight:bold; border-left:1px solid #cbcbcb;border-left:1px solid #cbcbcb;border-right:1px solid #cbcbcb;border-bottom:1px solid #cbcbcb;}
+.search li{ float:left; margin:0px 5px;}
+.text{ width:180px; height:30px; border:1px solid #cbcbcb; text-indent:10px;}
+.btn{width:80px; height:30px; text-align:center; padding:0px 10px; margin:15px 0px;border:1px solid #cbcbcb;}
+.button{ margin-left:70px;}
+.btns{width:80px; height:40px; line-height:40px; text-align:center; padding:0px 10px; margin:15px 5px;border:1px solid #cbcbcb; background:#6fa7d2; color:#FFF;}
+.list table{ width:100%;}
+.list table{ width:100%;}
+.list th{height:50px; line-height:50px;  font-size:18px; font-weight:bold; background:#FFF; border-left:1px solid #cbcbcb;border-right:1px solid #cbcbcb;border-bottom:1px solid #cbcbcb; text-align:center;}
+.list td{height:40px; line-height:40px;  font-size:14px; background:#FFF; border-left:1px solid #cbcbcb;border-right:1px solid #cbcbcb;border-bottom:1px solid #cbcbcb; text-align:center;}
+
+.news_mes{ width:875px; overflow:hidden; border:1px solid #cbcbcb;margin:20px auto;}
+.mes_title{ width:90%; height:30px; text-align:center; line-height:30px; margin:20px auto 0px auto; border-bottom:1px solid #cbcbcb; font-size:16px; font-weight:bold; }
+.mes_detail{width:90%;margin:20px auto; overflow:hidden;}
+
+.set{width:875px; height:30px;margin:10px auto; clear:both;}
+.set_left{ float:left;}
+.set_right{ float:right;}
+.set li{ margin:0px 10px; line-height:30px;}
+.set img {float:left;}
+.set span {float:left;cursor:pointer;}
+
+.main{width:875px; height:150px;margin:20px auto;}
+.conten{width:875px; overflow:hidden;margin:20px auto;}
+.conten img{ width:100%; height:100%; margin:10px auto;}
+.main table{ border-left:1px solid #cbcbcb;border-top:1px solid #cbcbcb; width:100%; height:100%}
+.main a{ text-decoration:underline; cursor:pointer;font-size:16px; font-weight:bold;}
+.main a:hover{ color:#F60;}
+.main td{ height:50px; line-height:50px; text-align:center; border-bottom:1px solid #cbcbcb;border-right:1px solid #cbcbcb;}
+.menu{width:875px; height:40px; line-height:40px;margin:0px auto;background:#ae0b0c;}
+.menu ul{ width:1018px; margin:0px 3px;}
+.menu a{ float:left; padding:0px 25px; border-right:1px solid #FFF;  color:#FFF;}
+.menu a:hover{ background:#F90;}
+.menu a:last-child{ border-right:none;}
+
+.other{width:875px; height:150px;margin:20px auto; border:1px solid #cbcbcb;}
+.other_left{ width:30px;height:150px; line-height:25px; border-right:1px solid #cbcbcb; float:left; text-align:center; font-size:16px; font-weight:bold; background:#e9e9e9;}
+.other_right{ width:100%;  background:#F60}
+.other_right li{ margin:20px 10px 0px 10px; float:left;}
+.other_right div{ height:20px; width:100px; text-align:center; line-height:20px;}
+.help{width:875px; overflow:hidden;margin:20px auto; border:1px solid #cbcbcb;}
+
+.help_detail{width: 875px; overflow:hidden; margin:10px auto;}
+.help_box{ width:560px; float:left; border:1px solid #cbcbcb; margin-left:10px; overflow:hidden; padding:20px;}
+
+.store_style{width:250px;border:solid 1px #cbcbcb;float:left; }
+.style_title{width:250px; height:50px; line-height:50px; text-align:center; background:#ae0b0c; color:#FFF; font-size:18px; font-weight:bold;}
+.v{float:right;width:14px;height:14px;overflow:hidden;display:inline-block;margin-top:-5px;margin-bottom:-5px;}
+.v01{background-position:0 0;}
+.v02{background-position:0 -16px;}
+.vtitle{height:35px;background:#f5f5f5;line-height:35px;border-top:1px solid #cbcbcb;border-bottom:1px solid #cbcbcb;margin-top:-1px;padding-left:20px;font-size:15px;color:#4d4d4d;font-family:"\5FAE\8F6F\96C5\9ED1";cursor:pointer;}
+.vtitle em{margin:10px 10px 0 0;}
+.vconlist{background:#FFF;}
+.vconlist li a{height:30px;line-height:30px;padding-left:5px;display:block;font-size:14px;color:#866f67;}
+.vconlist li.select a,.vconlist li a:hover{color:#ed4948;text-decoration:none;}
+
+.searchs{width:875px; height:30px;margin:10px auto; clear:both;}
+.searchs div{ clear:both;}
+.searchs span{  height:40px; line-height:40px; margin:0px 10px 10px 10px; float:left;}
+.tools{ float:right; line-height:33px;  height:34px; border:solid 1px #d3dbde;border-radius: 3px; cursor:pointer; padding:0px 10px; margin:0px 5px; background:#666; color:#FFF;}
+.tools:hover{color:#FFF;}
+.tools img{ width:24px; height:24px; margin:5px 5px 5px 0px; float:left;}
+.tools font{ line-height:34px; float:left;}
+/*编辑页面*/
+.tablelist{width:875px; overflow:hidden; margin:10px auto;border:solid 1px #cbcbcb; padding:20px 0px;}
+.tablelist table{margin-left:20px;}
+.lable{ width:100px; text-align:left;}
+.mes{ width:90%; padding:10px 0px;}
+.setbtn{margin-left: 70px;}
+
+.button {
+	width: 137px;
+	height: 35px;
+	background: url(../images/btnbg.png) no-repeat;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+	margin: 5px;
+	text-align:center;
+	padding:10px 0px;
+}
+.buttons{
+	background:#3d96c9;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+	margin: 4px;
+	padding:10px 60px;
+	text-align:center;
+	border-radius:5px;
+}
+
+.login-bg {
+    font-family: verdana, Arial;
+    font-size: 12px;
+    line-height:1;
+	background-attachment: fixed;
+	background-image:url(../images/login/login-bg.jpg);
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+}
+.main_box {position: absolute; top:60%; left:50%; margin-top:-270px; margin-left: -300px; padding: 30px; width:480px; height:350px;background:url(../images/login/panel-bg.png); border-radius: 10px; border:#cbcbcb 2px solid; box-shadow:0px 0px 10px #cbcbcb inset;}
+
+.login_logo { height: 33px; text-align:center;font-size: 24px;font-weight:bold;}
+.login_logo img { width:325px;height: 80px;}
+.login_title{ height:40px; line-height:40px; text-align:center; font-family:"黑体"; font-weight:bold; margin:20px 0px 0px 0px;}
+.login_title span{font-size:24px;}
+.login_form { margin:20px 0px;}
+.form-control {float:left;width: auto; height:40px; margin:5px 0px; font-size: 18px; line-height:18px; text-indent:50px; background:#FFF; border:#cbcbcb 2px solid;}
+.form-control.phone {width: 300px; background:url(../images/login/login_icon04.png) no-repeat 10px 5px #FFF;}
+.form-control.loginuser {width: 300px; background:url(../images/login/login_icon01.png) no-repeat 10px 5px #FFF;}
+.form-control.password {width: 300px;background:url(../images/login/login_icon02.png) no-repeat 10px 5px #FFF;}
+.form-control.vcode {width: 200px;background:url(../images/login_icon03.png) no-repeat 10px 5px #FFF;}
+.form-group {margin-bottom: 10px;clear:both;line-height:30px;}
+.form-group div{margin-top: 20px;line-height:20px; text-align:center; }
+.form-group div.t {width: 150px; text-align: right; cursor: pointer; float:left;}
+.t label{font-size:20px; font-family:"黑体"; font-weight:bold;}
+.loginbtn{ background:url(../images/login/button.png) no-repeat; border:none; width:125px; height:41px; font-size:20px; font-family:"黑体"; font-weight:bold; color:#FFF; text-align:center; margin:10px 0px 0px 150px; cursor:pointer;}
+.label_btn{ background:#e9e9e9; border:1px solid #cbcbcb; width:80px; height:30px; line-height:30px; text-align:center; float:right; margin-right:30px; margin-top:5px;text-indent:0px; cursor:pointer;}

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>我的桌面</title>
+		<link href="../css/H-ui.min.css" rel="stylesheet" type="text/css" />
+		<link href="../css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+		<link href="../lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+		<link href="../css/style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/H-ui.js"></script>
+		<script type="text/javascript" src="../js/H-ui.admin.js"></script>
+		<script type="text/javascript" src="../lib/layer/1.9.3/layer.js"></script>
+	</head>
+	<style>
+	.shortcut_divbox a{color:#fff;}
+	.shortcut_divbox a:hover{color:#fff;}
+	</style>
+<script type="text/javascript">
+	$(function(){
+		var url= window.location.href;
+		var userID='';
+		 strs = url.split("&");
+		 strs1=strs[0].split("=");
+		 strs2=strs[1].split("=");
+		 strs3=strs[2].split("=");
+		 $("#userID").val(strs1[1])
+		 $("#userType").val(strs2[1])
+		 if(strs2[1]==1){
+			 $("#box2").show();
+			 $("#box1").hide();
+			 $("#supplierList").attr("_href","../login/supplierList.action?userID="+$("#userID").val());
+			 $("#systemInStockList").attr("_href","../login/systemInStockList.action?userID="+$("#userID").val()+"&inStockType=1");
+			 $("#systemInStockItemSummary").attr("_href","../login/systemInStockItemSummary.action?userID="+$("#userID").val()+"&inStockType=1");
+			 $("#systemPurchaseInStockList").attr("_href","../login/systemInStockList.action?userID="+$("#userID").val()+"&inStockType=2");
+			 $("#systemPurchaseInStockItemSummary").attr("_href","../login/systemInStockItemSummary.action?userID="+$("#userID").val()+"&inStockType=2");
+		 }else{
+			 $("#box1").show();
+			 $("#box2").hide();
+			 if(strs3[1]==1){
+				 $("#box3").show();
+				 $("#box4").show();
+				 $("#notDownloadOrderList").attr("_href","../login/notDownloadOrderList.action?userID="+$("#userID").val());
+				$("#orderList").attr("_href","../login/orderList.action?userID="+$("#userID").val());
+				$("#notDownloadStockOrderList").attr("_href","../login/notDownloadStockOrderList.action?userID="+$("#userID").val());
+				$("#stockOrderList").attr("_href","../login/stockOrderList.action?userID="+$("#userID").val());
+				$("#inStockList").attr("_href","../login/inStockList.action?userID="+$("#userID").val()+"&inStockType=1");
+				$("#inStockItemSummary").attr("_href","../login/inStockItemSummary.action?userID="+$("#userID").val()+"&inStockType=1");
+				$("#purchaseInStockList").attr("_href","../login/inStockList.action?userID="+$("#userID").val()+"&inStockType=2");
+				$("#purchaseInStockItemSummary").attr("_href","../login/inStockItemSummary.action?userID="+$("#userID").val()+"&inStockType=2");
+			 }else{
+				 $("#box3").hide();
+				 $("#box4").hide();
+			 }
+		$("#supplier").attr("_href","../supplier/getSupplier.action?userID="+$("#userID").val());
+		$("#getCertificatesItems").attr("_href","../supplier/getCertificatesItems.action?userID="+$("#userID").val());
+		
+		 }
+	})
+	
+			//同步基本信息
+			function syncBaseInfo(){
+		  		layer.confirm('确认同步吗？',function(index){
+					 layer.closeAll();
+					 $.ajax({
+			  			type:"post",
+			  			dataType : "json", 
+						async : true,
+			  			url:"../sync/synchronousData.action",
+			  			data:{syncType:1},
+			  			beforeSend:function(){
+			  				$("#schedule").show();
+			  			},
+			  			success:function(data){
+			  				$("#schedule").hide();
+			  				if(data.result=="success"){
+			  					alert(data.code);
+								//layer.msg(data.code,{icon:6,time:5000});		  					
+			  				}else{
+			  					alert(data.code);
+			  					//layer.msg(data.code,{icon: 5,time:5000});
+			  				}
+			  			},
+			  			error : function(XMLHttpRequest, textStatus, errorThrown) {
+							layer.msg('系统错误！',{icon: 5,time:5000});
+						},
+						complete:function(){
+							$("#schedule").hide();
+						},
+			  		});
+				 });
+		     }
+	
+  	//同步食堂订货
+  	function syncOrderingInfo(){
+  		layer.confirm('确认同步吗？',function(index){
+  			layer.closeAll();
+	  		$.ajax({
+	  			type:"post",
+	  			dataType : "json", 
+				async : true,
+	  			url:"../sync/synchronousData.action",
+	  			data:{syncType:2},
+	  			beforeSend:function(){
+	  				$("#schedule").show();
+	  			},
+	  			success:function(data){
+	  				$("#schedule").hide();
+	  				if(data.result=="success"){
+	  					alert(data.code);
+						//layer.msg(data.code,{icon:6,time:5000});		  					
+	  				}else{
+	  					//layer.msg(data.code,{icon: 5,time:5000});
+	  					alert(data.code);
+	  				}
+	  			},
+	  			error : function(XMLHttpRequest, textStatus, errorThrown) {
+					layer.msg('输入不合法！',{icon: 5,time:5000});
+				}
+	  		});
+  		});
+  	}
+  	
+  	// 同步采购订货信息
+  	function syncStockOrderingInfo(){
+  		layer.confirm('确认同步吗？',function(index){
+  			layer.closeAll('dialog');
+  		$.ajax({
+  			type:"post",
+  			dataType : "json", 
+			async : true,
+  			url:"../sync/synchronousData.action",
+  			data:{syncType:3},
+  			beforeSend:function(){
+  				$("#schedule").show();
+  			},
+  			success:function(data){
+  				$("#schedule").hide();
+  				if(data.result=="success"){
+					//layer.msg(data.code,{icon:6,time:5000});
+  					alert(data.code);
+  				}else{
+  					alert(data.code);
+  					//layer.msg(data.code,{icon: 5,time:5000});
+  				}
+  			},
+  			error : function(XMLHttpRequest, textStatus, errorThrown) {
+				layer.msg('输入不合法！',{icon: 5,time:5000});
+			},
+  			complete:function(){
+				$("#schedule").hide();
+			},
+  		});
+  		});
+  	}
+  	//同步入库信息
+  	function syncInStockInfo(){
+  		layer.confirm('确认同步吗？',function(index){
+  			layer.closeAll('dialog');
+  		$.ajax({
+  			type:"post",
+  			dataType : "json", 
+			async : true,
+  			url:"../sync/synchronousData.action",
+  			data:{syncType:4},
+  			beforeSend:function(){
+  				$("#schedule").show();
+  			},
+  			success:function(data){
+  				$("#schedule").hide();
+  				if(data.result=="success"){
+					//layer.msg(data.code,{icon:6,time:5000});
+					alert(data.code);
+  				}else{
+  					//layer.msg(data.code,{icon: 5,time:5000});
+  					alert(data.code);
+  				}
+  			},
+  			error : function(XMLHttpRequest, textStatus, errorThrown) {
+				layer.msg('输入不合法！',{icon: 5,time:5000});
+			},
+			complete:function(){
+				$("#schedule").hide();
+			},
+  		});
+  		});
+  	}
+	</script>
+	<body>
+	<input type="hidden" id="userID"/>
+	<input type="hidden" id="userType"/>
+		<div class="pd-20" style="padding-top:20px;">
+			<p class="f-20 text-success">欢迎进入武汉大学饮食中心云订货平台</p>
+		</div>
+		<div class="shortcut_box" id="box1" style=" display: none; z-index: 0;" >
+			<div class="shortcut_left shortcut_divbox">
+				<div class="shortcut_div">
+					<div class="shortcut_style6 color01">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe60d;</i></div>
+						<div class="shortcut_title01"><a  id="supplier" href="javascript:void(0)">供货商配置</a></div>
+					</div>
+					<div class="shortcut_style2 color02">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe638;</i></div>
+						<div class="shortcut_title01"><a id="getCertificatesItems"  href="javascript:void(0)">供货商证件配置</a></div>
+					</div>
+					<div id="box3">
+					<div class="shortcut_style2 color03">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe627;</i></div>
+						<div class="shortcut_title01"><a id="notDownloadOrderList"  href="javascript:void(0)">下载食堂订单</a></div>
+					</div>
+					<div class="shortcut_style2 color04">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe627;</i></div>
+						<div class="shortcut_title01"><a  id="orderList" href="javascript:void(0)">配置食堂订单</a></div>
+					</div>
+					<div class="shortcut_style2 color05">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe627;</i></div>
+						<div class="shortcut_title01"><a  id="notDownloadStockOrderList" href="javascript:void(0)">下载采购订单</a></div>
+					</div>
+					</div>
+				</div>
+				<div class="shortcut_div" style="margin-top: 20px;" id="box4">
+					<div class="shortcut_style6 color06">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe627;</i></div>
+						<div class="shortcut_title01"><a  id="stockOrderList" href="javascript:void(0)">配置采购订单</a></div>
+					</div>
+					<div class="shortcut_style2 color07">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe627;</i></div>
+						<div class="shortcut_title01"><a  id="inStockList" href="javascript:void(0)">食堂送货单</a></div>
+					</div>
+					<div class="shortcut_style2 color08">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe627;</i></div>
+						<div class="shortcut_title01"><a  id="inStockItemSummary" href="javascript:void(0)">食堂送货单明细</a></div>
+					</div>
+					<div class="shortcut_style2 color09">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe627;</i></div>
+						<div class="shortcut_title01"><a  id="purchaseInStockList" href="javascript:void(0)">采购送货单</a></div>
+					</div>
+					<div class="shortcut_style2 color10">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe627;</i></div>
+						<div class="shortcut_title01"><a  id="purchaseInStockItemSummary" href="javascript:void(0)">采购送货单明细</a></div>
+					</div>
+				</div>
+					
+			</div>
+			
+		</div>
+		<div class="shortcut_box" id="box2" style=" display: none;">
+			<div class="shortcut_left shortcut_divbox">
+				<div class="shortcut_div">
+					<div class="shortcut_style6 color01">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe60d;</i></div>
+						<div class="shortcut_title01"><a  id="supplierList" href="javascript:void(0)">供货商审核</a></div>
+					</div>
+					<div class="shortcut_style2 color02">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe627;</i></div>
+						<div class="shortcut_title01"><a id="systemInStockList"  href="javascript:void(0)">食堂入库单</a></div>
+					</div>
+					<div class="shortcut_style2 color03">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe627;</i></div>
+						<div class="shortcut_title01"><a  id="systemInStockItemSummary" href="javascript:void(0)">食堂入库单明细</a></div>
+					</div>
+					<div class="shortcut_style2 color04">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe627;</i></div>
+						<div class="shortcut_title01"><a id="systemPurchaseInStockList"  href="javascript:void(0)">采购入库单</a></div>
+					</div>
+					<div class="shortcut_style2 color05">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe627;</i></div>
+						<div class="shortcut_title01"><a  id="systemPurchaseInStockItemSummary" href="javascript:void(0)">采购入库单明细</a></div>
+					</div>
+				</div>
+					<div class="shortcut_div" style="margin-top: 30px;">
+					<div class="shortcut_style2 color06" style="margin-left: 0px;">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe62b;</i></div>
+						<div class="shortcut_title01"><a onclick="syncBaseInfo()">同步基本信息</a></div>
+					</div>
+					<div class="shortcut_style2 color07" >
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe636;</i></div>
+						<div class="shortcut_title01"><a onclick="syncOrderingInfo()">同步食堂订货</a></div>
+					</div>
+					<div class="shortcut_style2 color08">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe67f;</i></div>
+						<div class="shortcut_title01"><a onclick="syncStockOrderingInfo()">同步采购订货</a></div>
+					</div>
+					<div class="shortcut_style2 color09">
+						<div class="shortcut_icon01"><i class="Hui-iconfont">&#xe616;</i></div>
+						<div class="shortcut_title01"><a onclick="syncInStockInfo()">同步入库(送货)信息</a></div>
+					</div>
+				</div>
+					
+			</div>
+			
+		</div>
+		<div id="schedule" style="width:100%;height:100%;position:absolute;top:0px;left:0px; background-color:rgba(0,0,0,0.4);z-index: 999;display:none">
+			<div style="text-align: center;left: 47%;top: 10%;position:absolute;">
+				<p style="color:#fff">正在同步……</p>
+				<a><img alt="正在同步" title="正在同步" src="images/icon/05043130.gif"></a>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/H-ui.js"></script>
+	</body>
+
+</html>
