@@ -65,6 +65,7 @@ public class MealCouponController{
 		service.saveMealCoupon(mc);
 //		service.save(mc);
 		System.out.println("插入成功!");
+		System.out.println("测试一下");
 		out.flush();
 		return null;
 		
